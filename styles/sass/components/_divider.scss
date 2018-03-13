@@ -1,0 +1,51 @@
+.divider{
+	position: relative;
+	line-height: 20px;
+	text-align: center;
+	padding: $standard-padding 0;
+	text-transform: uppercase;
+
+	&::before{
+		position: absolute;
+		top: 50%;
+		display: block;
+		content: "";
+		width: 100%;
+		height: 1px;
+		background-color: #ccc;
+	}
+
+	&-list{
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		padding-left: 1em;
+		padding-right: 1em;
+		vertical-align: middle;
+		background-color: #fff;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	&-item{
+		float: left;
+		margin-right: 10px;
+	}
+
+	&-item:last-of-type{
+		margin-right: 0;
+	}
+
+	&-button{
+		text-decoration: none;
+		color: #ccc;
+		display: block;
+		padding: 5px 15px;
+	}
+
+	&-buttonActive{
+		background-color: #128FCE;
+		border-radius: 3px;
+		color: #fff
+	}
+}

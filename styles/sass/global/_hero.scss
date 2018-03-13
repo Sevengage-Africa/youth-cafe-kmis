@@ -1,0 +1,98 @@
+.hero{
+    width: 100%;
+    float: left;
+    min-height: 600px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+
+	&--short{
+		height: 400px;
+		min-height: auto;
+		background-image: url(../assets/point-background-transparent.png);
+		background-size: inherit;
+
+		@media only screen and (max-width: $screen-sm) {
+			background-size: inhert;
+			.hero__textCntr{
+				top: 50%;
+			}
+		}
+	}
+
+	&--home{
+		background-image: url(../assets/youth-hub.jpg);
+	}
+
+
+	&--blue{
+		background-color: #2980b9;
+		background-position: 63px -458px;
+
+		@media only screen and (max-width: $screen-sm) {
+			background-position: -137px -458px;
+		}
+	}
+
+
+	&__overlay{
+		background-color: rgba(0, 0, 0, 0.45);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__textCntr{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		margin-top: -50px;
+		width: 100%;
+		text-align: center;
+
+		@media only screen and (max-width: $screen-md) {
+			top: 35%;
+			padding: 60px;
+			margin-top: -80px;
+		}
+
+		@media only screen and (max-width: $screen-sm) {
+			padding: 20px;
+		}
+	}
+
+	&__heading{
+		font-size: 7rem;
+		line-height: 1;
+		margin: 0 0 20px 0;
+		color: #fff;
+
+		&--centerSecondary{
+			font-weight: 300;
+			font-size: 8rem;
+			text-align: center;
+			margin: 50px 0;
+			line-height: 1;
+		}
+
+		@media only screen and (max-width: $screen-lg) {
+			font-size: 6rem;
+		}
+
+		@media only screen and (max-width: $screen-sm) {
+			font-size: 4rem;
+		}
+
+
+	}
+
+	&__text{
+		font-size: 2.1rem;
+		color: #fff;
+		margin-bottom: 20px;
+	}
+
+}

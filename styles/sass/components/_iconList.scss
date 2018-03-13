@@ -1,0 +1,73 @@
+// Horizontal SVG Icon lists
+
+.iconList{
+	@extend %unstyled-list;
+	display: flex;
+
+	&--right{
+		float: right;
+
+		li{
+			margin-left: 30px;
+		}
+	}
+
+
+	&__item{
+		display: inline-block;
+		line-height: 1;
+		text-align: center;
+
+		&--grid{
+			flex: 1 0 auto;
+			margin: 20px 10px;
+
+			@media only screen and (max-width: $screen-md) {
+				margin: 20px 0;
+			}
+		}
+    	
+
+		@media only screen and (max-width: $screen-xs) {
+			margin: 0;
+			width: (100% / 6);
+			text-align: center;
+		}
+	}
+
+	&__link{
+		display: block;
+
+		&--btn{
+			border-radius: 20px;
+			border: 1px solid #fff;
+			padding: 10px;
+		}
+
+		&--greyBtn{
+			border-radius: 20px;
+			border: 1px solid #999;
+			padding: 10px;
+		}
+	}
+
+	&__socialLogo{
+		fill: #fff;
+		margin-left: -30px;
+
+		@media only screen and (max-width: $screen-xs) {
+			width: 100%;
+			margin: 0;
+		}
+
+
+		&--small{
+			width: 20px;
+			margin: 0;
+		}
+
+		&--grey{
+			fill: #555;
+		}
+	}
+}

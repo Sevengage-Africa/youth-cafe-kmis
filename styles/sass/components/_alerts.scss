@@ -1,0 +1,36 @@
+.alert{
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+
+  &.alert-warning{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }
+  &.alert-error{
+    color: #f2dede;
+    background-color: #a94442;
+    border-color: #ebccd1;
+  }
+  &.alert-success{
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+}
+
+
+.offline{
+  @extend .alert;
+  @extend .alert-error;
+
+  margin: 0;
+  z-index: 999999;
+   border-radius: 0px;
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+}

@@ -1,0 +1,100 @@
+// globals
+@import "components/variables";
+
+//mixins
+@import "mixins/_grid-mixin";
+@import "mixins/_list-mixin";
+
+
+// re-usables
+%unstyled-list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+%float-left{
+  float: left;
+}
+
+
+/* -----------------------------------------------
+   $Last Updated: 11/06/16 $mxg
+  
+  1. Defaults & Resets & Generics
+  2. Layout & Grid
+  3. Typography
+  4. Generics
+  5. Tables
+  6. Buttons & Icons
+  7. Forms
+  8. Alerts
+  9. Popover
+  10. Dividers
+  11. Any custom break point properties
+------------------------------------------------ */
+
+
+/* 1. Defaults & Resets
+========================== */
+@import "components/defaults";
+
+
+/* 2. Layout & Grid
+==========================*/
+@import "components/grid";
+
+
+/* 3. Typography
+==========================*/
+// @import "components/typography";
+
+
+/* 5. Tables
+==========================*/
+// @import "components/tables";
+
+
+/* 6. Buttons & Icons
+==========================*/
+@import "components/buttons";
+
+
+/* 7. Forms
+==========================*/
+@import "components/forms";
+
+
+/* 8. Alerts 
+==========================*/
+@import "components/alerts";
+
+
+/* 9. Popovers
+==========================*/
+// @import "components/popovers";
+
+
+/* 10. Dividers
+==========================*/
+@import "components/divider";
+
+
+
+/* 4. Generics 
+==========================*/
+@import "components/generics";
+
+.hide, .ng-hide, [ng-cloak], [class*="span-"].hide{
+  display: none !important;
+}
+
+.show, .ng-show, [class*="span-"].show{
+  display: block !important;
+}
+
+img.flex-img{
+  width: 100%;
+}
+
+
