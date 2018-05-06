@@ -68,16 +68,16 @@ a.btn {
   background-color: #666
 }
 .blue, .btn-info{
-  background: $brand-info;
+  background: $blue;
 }
 .orange, .btn-warning{
-  background: $brand-warning;
+  background: $orange;
 }
 .green, .btn-success{
-  background: $brand-success;
+  background: $green;
 }
 .red, .btn-danger{
-  background: $wcb-realestate-red;
+  background: $red;
 }
 .light-grey{
   background-color: #d2dde0;
@@ -90,8 +90,8 @@ a.btn {
   background-color: rgba(255, 255, 255, 0.25);
 }
 .purple{
-  background-color: #9b59b6;
+  background-color: $purple;
 }
 .yellow{
-  background-color: #f1c40f;
+  background-color: $yellow;
 }

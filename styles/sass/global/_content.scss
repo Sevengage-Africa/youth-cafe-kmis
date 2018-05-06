@@ -6,19 +6,31 @@
 	// left column
 	&__column{
 		@extend .span-3-10-lg;
-		@extend .span-1-1;
-		margin-top: 60px;
+		margin-top: 40px;
 		float: left;
 		padding: $standard-padding;
 		position: relative;
 
-		
+		p{
+			margin-bottom: 15px;
+			line-height: 1.5;
+		}
+
+
+		&--full{
+			width: 100%;
+		}
 
 
 		@media only screen and (max-width: $screen-md) {
 			margin: 0;
 			height: auto;
+			width: 100%;
 			padding: 0;
+
+			&--pad{
+				padding: $standard-padding;
+			}
 		}
 
 		
@@ -123,12 +135,29 @@
 			&:nth-of-type(1n+5){
 				display: none;
 			}
+
+			&--showItem{
+				display: block !important;
+			}
+		
+			&--compose{
+				display: none;
+			}
 		}
 
 		&--heading{
 			background-color: #eee;
 			text-align: left;
 			display: none;
+		}
+
+		
+		&--more{
+			display: none;
+
+			@media only screen and (max-width: $screen-md) {
+				display: block;
+			}
 		}
 	}
 	
@@ -138,6 +167,10 @@
 		line-height: 1.5;
 		display: block;
 		color: #777;
+
+		&--flex{
+			display: flex;
+		}
 
 		@media only screen and (max-width: $screen-md) {
 			font-size: 1.6rem;
@@ -162,6 +195,27 @@
 		width: 30px;
 	}
 
+	&__navIconCntr{
+		display: inline-block;
+		margin-right: 20px;
+		vertical-align: middle;
+		
+		@media only screen and (max-width: $screen-sm) {
+			margin: 0;
+		    width: 100%;
+		}
+		
+	}
+
+	&__navText{
+		display: inline-block;
+		flex: 1 1 0;
+
+		@media only screen and (max-width: $screen-sm) {
+			display: none;
+		}
+	}
+
 
 	&__navClose{
 		display: block;
@@ -184,21 +238,57 @@
 	// main content area
 	&__main{
 		@extend .span-7-10-lg;
-		@extend .span-1-1;
 		float: left;
 		padding: $standard-padding;
-		margin-top: 60px;
+		margin-top: 0;
 
-		@media only screen and (max-width: $screen-sm) {
-			margin-top: 20px;
+
+		&--fullWidth{
+			width: 100%;
 		}
 
-		h2{
+		&--pullUp{
+			margin-top: -60px;
+		}
+
+		&--centered{
+			float: none;
+			margin: 60px auto 0 auto;
+		}
+
+		&--pullUpCentered{
+			float: none;
+			margin: -60px auto 0 auto;
+		}
+
+		@media only screen and (max-width: $screen-md) {
+			width: 100%;
+			margin-top: 0;
+		}
+
+
+		// generics: shouldn't be doing this...
+		h2, #cform h2{
 			font-size: 3.2rem;
 			font-weight: 300;
 			border-bottom: 1px solid #eee;
-			margin: 0 0 20px 0;
+			margin: 40px 0 20px 0;
 			padding-bottom: 10px;
+			line-height: 1;
+			position: relative;
+			color: #777;
+		}
+
+		h3{
+			font-weight: 400;
+			font-size: 2.4rem;
+			margin-bottom: 15px;
+			line-height: 1;
+		}
+
+		h4{
+			font-size: 1.8rem;
+			font-weight: 400;
 			line-height: 1;
 		}
 
@@ -217,5 +307,133 @@
 				margin-bottom: 16px;
 			}
 		}
+
+		.ul-col-2{
+			column-count: 2;
+			list-style-type: none;
+			margin: 0 0 40px 0;
+			padding: 0;
+		}
+
+
 	}
+
+	&__heading--1{
+		font-size: 4rem;
+		margin: 0 0 10px 0;
+		line-height: 1;
+		font-weight: 300;
+
+		@media only screen and (max-width: $screen-sm) {
+			text-align: center;
+		}
+	}
+
+	&__subHeading{
+		margin-bottom: 40px !important;
+		line-height: 1.5 !important;
+		font-size: 1.4rem !important;
+		font-style: italic;
+
+		@media only screen and (max-width: $screen-sm) {
+			text-align: center;
+		}
+	}
+
+
+	&__heading--edit{
+		position: absolute;
+		display: block;
+		right: 0;
+		height: 30px;
+		width: 30px;
+		bottom: 10px;
+	}	
+
+	&__heading--icon{
+		fill: $blue;
+	}
+
+	&__heading--btn{
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+		font-size: 1.8rem;
+	}
+
+
+	// messenger
+	&__message{
+		max-height: 500px;
+		overflow: auto;
+
+		blockquote{
+			margin-left: 0px;
+			border-left: 1px solid #ccc;
+			padding-left: 10px;
+		}
+
+		&--unread{
+			font-weight: 800;
+		}
+
+		&--read{
+			background-color: #f2f2f2;
+			color: #999;
+
+			a{
+				color: #999;
+			}
+		}
+	}
+
+
+
+	// member & profile page
+	&__member{}
+
+	&__memberImageCntr{
+		overflow: hidden;
+		width: 100%;
+		margin: 0px auto 40px auto;
+		padding-bottom: 40px;
+		border-bottom: 1px solid #eee;
+
+		@media only screen and (max-width: $screen-xs) {
+			margin: -100px auto 0 auto;
+		}
+
+		@media only screen and (max-width: $screen-xs) {
+			margin: 0;
+		}
+	}
+
+	&__memberImage{
+		@extend .flex-img;
+		clip-path: circle(44% at 50% 50%);
+		max-width: 200px;
+		margin: 0 auto;
+		display: block;
+
+		&--small{
+			max-width: 30px;
+		}
+	}
+
+	&__memberAbout{
+		font-size: 1.2rem;
+		line-height: 1.5;
+		text-align: center;
+		width: 80%;
+		margin: 0 auto;
+	}
+
+
+
+	&__edit{
+		margin: 0 0 200px 0;
+	}
+
+
+
 }

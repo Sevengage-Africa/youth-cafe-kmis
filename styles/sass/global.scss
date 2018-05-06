@@ -3,13 +3,21 @@
 @import "global/framework-mx";
 
 // plugins
+@import "lib/animate";
 @import "lib/remodal";
-@import "lib/_remodal-default-theme";
+@import "lib/remodal-default-theme";
 
 //globals
 @import "global/header";
+@import "global/nav";
 @import "global/footer";
 @import "global/hero";
 @import "global/tiles";
 @import "global/content";
 @import "global/modals";
+@import "global/cafes";
+@import "global/team";
+@import "components/iconList";
+
+// events
+@import "global/events"

@@ -1,0 +1,28 @@
+.team{
+
+	@extend .inner;
+
+	&__pod{
+		@extend .span-1-3-md;
+		@extend .span-1-2;
+		float: left;
+		padding: 20px;
+		display: block;
+	}
+
+
+	&__memberImg{
+		display: block;
+		margin: 0 auto;
+		clip-path: circle(44% at 50% 50%);
+		max-width: 200px;
+		@extend .flex-img;
+	}
+
+
+	&__memberCaption{
+		text-align: center;
+		margin-top: 0;
+		color: #777;
+	}
+}

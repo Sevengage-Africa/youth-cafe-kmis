@@ -1,0 +1,192 @@
+// -------------------------
+//	Global Navigation
+// -------------------------
+
+.nav{
+	width: 60%;
+	float: right;
+	display: flex;
+	text-align: center;
+	margin-top: 20px;
+
+	@media only screen and (max-width: $screen-md) {
+		width: 65%;
+		margin-top: 15px;
+	}
+	
+	@media only screen and (max-width: $screen-sm) {
+		bottom: 0;
+		left: 0;
+		border: none;
+		background-color: rgba(32, 32, 33, 0.91);
+		height: auto;
+		position: fixed;
+		z-index: 999;
+		width: 100%;
+	}
+
+	&__item{
+		display: inline-block;
+		flex: 1 0 auto;
+
+
+		@media only screen and (max-width: $screen-sm) {
+			&--login{
+				display: none;
+			}
+		}
+
+		@media only screen and (min-width: $screen-sm) {
+			&--login{
+				display: block;
+			}
+		}
+	}
+
+	&__link{
+		display: block;
+		padding: 7px 5px 5px 5px;
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+
+		@media only screen and (max-width: $screen-sm) {
+			color: #ccc;
+		}
+	}
+
+	&__icon{
+		fill: #fff;
+		height: 20px;
+		margin-bottom: 5px;
+
+		@media only screen and (max-width: $screen-sm) {
+			fill: #ccc;
+		}
+	}
+
+	&__label{
+		display: block;
+
+		@media only screen and (max-width: $screen-sm) {
+			font-size: .9rem;
+			text-transform: uppercase;
+		}
+	}
+
+	&__notifications{
+		display: block;
+		position: absolute;
+		padding: 9px 6px 9px 5px;
+		background-color: #e74c3c;
+		border-radius: 50%;
+		line-height: 0;
+		left: 50%;
+		top: 0;
+		margin-left: 7%;
+		z-index: 99;
+		color: #fff;
+		height: 0;
+
+    	@media only screen and (max-width: $screen-sm) {
+    		top: 5px;
+    	}
+	}
+
+}
+
+
+
+// -------------------------
+//	Global Mobile Navigation
+// -------------------------
+
+.mobileNav{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #414042;
+    z-index: 9999;
+    border-left: 1px solid #414042;
+    overflow-y: auto;
+    right: -2000px;
+
+	-webkit-transition: all .5s cubic-bezier(.89,.01,.02,.99);
+	   -moz-transition: all .5s cubic-bezier(.89,.01,.02,.99);
+	     -o-transition: all .5s cubic-bezier(.89,.01,.02,.99);
+			transition: all .5s cubic-bezier(.89,.01,.02,.99);
+
+	@media only screen and (min-width: $screen-lg) {
+		width: 60%;
+	}
+
+    &--show{
+    	right: 0 !important;
+    	display: block !important;
+    }
+
+    &__header{
+    	font-size: 4rem;
+    	font-weight: 200;
+    	width: 100%;
+    	text-align: center;
+    	margin: 0;
+    	padding: 20px;
+    	color: #cdd136;
+    }
+
+	&__list{
+		list-style-type: none;
+		@extend .grid;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		float: left;
+		position: relative;	
+	}
+
+	&__item{
+		@extend .span-1-3;
+		float: left;
+		border-top: 2px solid #414042;
+		border-right: 2px solid #414042;
+	}
+
+	&__link{
+		color: #bfbdc1;
+		display: block;
+		padding: 25px 10px;
+		text-align: center;
+		background-color: #4e4e50;
+		line-height: 1.25;
+	}
+
+	&__notifications{
+		@extend .nav__notifications;
+		margin-left: 1%;
+		top: 20px;
+	}
+
+
+	&__icon{
+		fill: #bfbdc1;
+		height: 30px;
+	}
+
+	&__text{
+		display: block;
+		margin-top: 8px;
+		line-height: 1;
+	}
+
+	&__closeIcon{
+		fill: #bfbdc1;
+		height: 30px;
+	}
+
+	&__close{
+		display: block;
+		position: absolute;
+		padding: 10px;
+	}
+}

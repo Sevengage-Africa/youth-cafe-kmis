@@ -114,14 +114,13 @@ label{
   }
 
   &.short{
-    padding-right: 8px;
 
     & .input-med{
       width:146px;
     }
 
-    &:nth-of-type(even){ 
-      padding-right: 0 
+    &.short-space{ 
+      padding-right: 8px
     }
   }
 }
@@ -134,8 +133,24 @@ label{
 
 .controls{
   margin-left:160px;
+  position: relative;
 }
 
+.control-icon-cntr{
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
+  display: block;
+}
+
+.control-password-toggle{
+  @extend .control-icon-cntr;
+}
+
+.control-icon{
+    height: 25px;
+    fill: #999;
+}
 
 // help text
 .help-inline, #content p.help-inline{
@@ -248,3 +263,4 @@ label{
   }
 
 }
+

@@ -7,19 +7,20 @@
 	@extend .grid;
 
 	@media only screen and (max-width: $screen-md) {
-		padding-bottom: 50px;
+		padding-bottom: 60px;
 	}
 
 	&__logo{
-		max-width:100%;
+		max-width: 200px;
+		width:100%;
 		height:auto;
 		display: block;
    		margin: 0 auto 10px auto;
 
-   		@media only screen and (max-width: $screen-sm) {
-   			margin: 0 0 10px 0;
+   		&--shield{
+   			width: auto;
+   			max-height: 75px;
    		}
-
 	}
 
 	&__legal{
@@ -27,8 +28,9 @@
 		color: #ccc;
 		line-height: 1.5;
 
-		@media only screen and (max-width: $screen-sm) {
+		@media only screen and (max-width: $screen-md) {
 			font-size: 1.1rem;
+			text-align: center;
 		}
 
 		&--center{

@@ -4,15 +4,17 @@
 
 
 (function(){
-	var version = '1.0.1';
+	var version = '1.1.0';
 
 	var filesToCache = [
-		'/',
-		'index.html',
-		'styles/global.min.css',
-		'scripts/global.min.js',
-		'assets/point-background.png',
-		'assets/yc-logo-horz.png'
+		'/home.html',
+		'/mobile/locations',
+		'/mobile/hubs',
+		'/mobile/page/about',
+		'/styles/global.min.css',
+		'/scripts/app.min.js',
+		'/assets/point-background.png',
+		'/assets/yc-logo-horz.png'
 	];
 
 
@@ -21,12 +23,12 @@
 	};
 
 
-	self.addEventListener('install', function(e) {
+	self.addEventListener('install', (e) => {
 		console.log('[ServiceWorker] Install');
 		let cacheName = createCacheName();
 
 		e.waitUntil(
-			caches.open(cacheName).then(function(cache) {
+			caches.open(cacheName).then((cache) => {
 				console.log('[ServiceWorker] Caching app shell');
 				return cache.addAll(filesToCache);
 			})

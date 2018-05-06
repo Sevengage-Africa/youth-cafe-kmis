@@ -6,7 +6,7 @@
 
 .remodal-bg.remodal-is-opening,
 .remodal-bg.remodal-is-opened {
-  filter: blur(3px);
+  // filter: blur(3px);
 }
 
 /* Default theme styles of the overlay */
@@ -17,16 +17,18 @@
 
 .remodal-overlay.remodal-is-opening,
 .remodal-overlay.remodal-is-closing {
-  animation-duration: 0s;
-  animation-fill-mode: forwards;
+  animation-duration: .75s;
+  // animation-fill-mode: forwards;
 }
 
 .remodal-overlay.remodal-is-opening {
-  animation-name: remodal-overlay-opening-keyframes;
+  @extend .animated;
+  @extend .fadeIn;
 }
 
 .remodal-overlay.remodal-is-closing {
-  animation-name: remodal-overlay-closing-keyframes;
+  @extend .animated;
+  @extend .fadeOut;
 }
 
 /* Default theme styles of the wrapper */
@@ -43,23 +45,25 @@
   margin-bottom: 10px;
   padding: 0;
 
-  transform: translate3d(0, 0, 0);
+  // transform: translate3d(0, 0, 0);
 
   background: #fff;
 }
 
 .remodal.remodal-is-opening,
 .remodal.remodal-is-closing {
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
+  // animation-duration: 0.3s;
+  // animation-fill-mode: forwards;
 }
 
 .remodal.remodal-is-opening {
-  animation-name: remodal-opening-keyframes;
+  @extend .animated;
+  @extend .bounceInUp;
 }
 
 .remodal.remodal-is-closing {
-  animation-name: remodal-closing-keyframes;
+  @extend .animated;
+  @extend .bounceOutDown;
 }
 
 /* Vertical align of the modal dialog */
@@ -174,12 +178,12 @@
 
 @keyframes remodal-opening-keyframes {
   from {
-    transform: scale(1.05);
+    // transform: scale(1.05);
 
     opacity: 0;
   }
   to {
-    transform: none;
+    // transform: none;
 
     opacity: 1;
   }
@@ -221,6 +225,6 @@
 
 @media only screen and (min-width: $screen-md) {
   .remodal {
-    max-width: 30%;
+    max-width: 40%;
   }
 }

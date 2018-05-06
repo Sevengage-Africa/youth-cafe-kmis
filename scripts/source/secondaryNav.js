@@ -1,7 +1,8 @@
 /* ---------------------------------------------
 	Secondary Nav
 ------------------------------------------------*/
-
+(function ($){
+	
 	const navMoreBtn = `
 		<li class="content__navItem content__navItem--more">
 			<a href="" class="content__navLink content__navLink--icon" id="secNavMore">
@@ -77,3 +78,6 @@
 
 	$(window)
 		.on("deviceOrientationChange", secNavModule.handelExtras);
+
+
+}(window.jQuery));

@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#6F6F6F">
 
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,600,900' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,600,900' rel='stylesheet' type='text/css'> -->
 <link rel="stylesheet" type="text/css" href="styles/global.min.css">
 
 
@@ -44,12 +44,19 @@ if('serviceWorker' in navigator) {
 }
 </script> -->
 
+<script src="scripts/utils.min.js"></script>
+
 </head>
 <body>
 
 	<header class="header">
 		<div class="inner">
 			<div class="header__logo">
+				<a href="" class="header__backButtonLink">
+					<svg class="header__backButton" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+						<path d="M19 11h-11.6l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-7 7c-0.1 0.1-0.2 0.2-0.2 0.3-0.1 0.2-0.1 0.5 0 0.8 0.1 0.1 0.1 0.2 0.2 0.3l7 7c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3h11.6c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+					</svg>
+				</a>
 				<!-- <a href=""><img src="assets/yc-full-logo-white-layered.png" alt="Youth Cafe" class="header__logoImg"></a> -->
 				<a href=""><img src="assets/yc-logo-horz.png" alt="Youth Cafe" class="header__logoImg"></a>
 			</div>
@@ -115,13 +122,13 @@ if('serviceWorker' in navigator) {
 		</div>
 	</header>
 
-	<div class="hero hero--home">
+	<div class="hero" style="background-image: url(/assets/multicultural_2.jpg)">
 		<div class="hero__overlay"></div>
 		<div class="inner">
 			<div class="hero__textCntr">
 				<h1 class="hero__heading">Get connected. Stay connected.</h1>
 				<p class="hero__text">Upload your CV, send messages and register for events. Connect, grow, create!</p>
-				<p><a href="#login" class="btn btn-large btn-opaque">Log In</a></p>
+				<p><a href="" rel="login" class="btn btn-large btn-opaque">Log In</a></p>
 			</div>
 		</div>
 	</div>
@@ -240,21 +247,14 @@ if('serviceWorker' in navigator) {
 
 	<footer class="footer">
 		<div class="inner">
-			<div class="span-1-2-md span-1-1">
-				<div class="span-3-10-lg span-4-10-md span-1-2 no-pad">
-					<img src="assets/south-africa-coat-of-arms@2x.png" class="footer__logo">
-				</div>
-
-				<div class="span-6-10-md span-1-2 no-pad">
-					<img src="assets/wcg-logo-footer@2x.png" class="footer__logo" alt="Western Cape">
-					
-					<p class="footer__legal">Youth Caf&eacute;s are powered by the Department of Social Development</p>
-				</div>
-				<div class="span-1-10 no-pad"></div>
+			
+			<div class="span-3-10-md span-1-1 no-pad">
+				<img src="assets/wcg-logo-footer@2x.png" class="footer__logo" alt="Western Cape">
+				<p class="footer__legal">Youth Caf&eacute;s are powered by the Department of Social Development</p>
 			</div>
-
-
-			<div class="span-1-2-md span-1-1">
+				
+		
+			<div class="span-6-10-md span-1-1">
 				<ul class="footer__list">
 					<li class="footer__listItem"><a href="" class="footer__listLink">Home</a></li>
 					<li class="footer__listItem"><a href="" class="footer__listLink">Youth Caf&eacute;s</a></li>
@@ -264,6 +264,11 @@ if('serviceWorker' in navigator) {
 					<li class="footer__listItem"><a href="" class="footer__listLink">Our Team</a></li>
 				</ul>
 				<p class="footer__legal footer__legal--center">Western Cape Government © 2018.  All rights reserved. <br> Users are advised to read the <a href="">terms of use</a> and <a href="">privacy policy</a> carefully.</p>
+			</div>
+
+
+			<div class="span-1-10-lg span-1-1 no-pad">
+				<img src="assets/south-africa-coat-of-arms@2x.png" class="footer__logo">
 			</div>
 			
 		</div>
@@ -400,8 +405,12 @@ if('serviceWorker' in navigator) {
 	<br>
 	<img src="assets/yc-logo-layered.png" alt="Youth Cafe" class="logo__small">
 	
-
 	<div class="span-1-1">
+		
+		<div class="alert alert-info">
+			<p>Log In and we will get you on your way!</p>
+		</div>
+
 		<form class="form-left form-full-width" id="signupForm">
 			<div class="control-group">
 				<label class="control-label" for="username">Email</label>
@@ -432,7 +441,7 @@ if('serviceWorker' in navigator) {
 			</ul>
 		</div>
 
-		<a href="#register" class="btn btn-large btn-full-width light-grey">Sign Up</a>
+		<a href="" rel="register" class="btn btn-large btn-full-width light-grey">Sign Up</a>
 	</div>
 </div>
 
@@ -494,7 +503,7 @@ if('serviceWorker' in navigator) {
 			</ul>
 		</div>
 
-		<a href="#login" class="btn btn-large btn-full-width light-grey">Log In</a>
+		<a href="" rel="login" class="btn btn-large btn-full-width light-grey">Log In</a>
 	</div>
 </div>
 
@@ -514,6 +523,19 @@ if('serviceWorker' in navigator) {
 
 
 
+<script>
+	
+	YCAFE.Globals = {
+		isLoggedIn: false,
+		user: {
+			screen_name: "",
+			member_id: "",
+			full_name: ""
+		}
+	};
+
+</script>
 <script src="scripts/global.min.js"></script>
+
 </body>
 </html>

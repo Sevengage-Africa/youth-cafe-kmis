@@ -3,6 +3,7 @@
 .iconList{
 	@extend %unstyled-list;
 	display: flex;
+	margin: 0 !important;
 
 	&--right{
 		float: right;
@@ -12,11 +13,17 @@
 		}
 	}
 
+	&--center{
+		display: inline;
+		text-align: center;
+	}
+
 
 	&__item{
 		display: inline-block;
 		line-height: 1;
 		text-align: center;
+		margin: 0;
 
 		&--grid{
 			flex: 1 0 auto;
@@ -24,6 +31,19 @@
 
 			@media only screen and (max-width: $screen-md) {
 				margin: 20px 0;
+			}
+		}
+
+		&--space{
+			margin: 0 60px 0 0 !important;
+
+			@media only screen and (max-width: $screen-sm) {
+				margin-right: 40px !important;
+			}
+
+			@media only screen and (max-width: $screen-sm) {
+				margin: 0 !important;
+				flex: 1 0 auto;
 			}
 		}
     	
@@ -37,6 +57,7 @@
 
 	&__link{
 		display: block;
+		padding: 15px 0;
 
 		&--btn{
 			border-radius: 20px;
@@ -49,6 +70,67 @@
 			border: 1px solid #999;
 			padding: 10px;
 		}
+	}
+
+
+
+	&__navLink{
+		@extend .content__navLink;
+		display: flex;
+		background-color: transparent;
+		padding: 6px 10px 4px 10px;
+		border-radius: 3px;
+
+		&--activeOn{
+			background-color: rgba(26, 188, 156, 0.1);
+		}
+
+		&--activeOff{
+			background-color: rgba(192, 57, 43, 0.1);
+		}
+	}
+
+	&__navLinkIconCntr{
+		display: inline-block;
+		margin-right: 10px;
+
+		@media only screen and (max-width: $screen-sm) {
+			text-align: center;
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__navLinkIcon{
+		width: 20px;
+		fill: #777;
+
+		&--activeOn{
+			fill: $green;
+		}
+
+		&--activeOff{
+			fill: $red;
+		}
+	}
+
+	&__navText{
+		display: inline-block;
+    	flex: 1 1 0;
+
+    	&--activeOn{
+			color: $green;
+			font-weight: 600;
+		}
+
+		&--activeOff{
+			color: $red;
+			font-weight: 600;
+		}
+
+    	@media only screen and (max-width: $screen-sm) {
+    		display: none;
+    	}
 	}
 
 	&__socialLogo{

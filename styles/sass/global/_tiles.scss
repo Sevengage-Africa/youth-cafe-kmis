@@ -14,7 +14,7 @@
 	}
 
 	&--orange{
-		background-color: #f39c12;
+		background-color: $orange;
 		background-position: 63px -117px;
 
 		@media only screen and (max-width: $screen-sm) {
@@ -23,7 +23,7 @@
 	}
 
 	&--yellow{
-		background-color: #f1c40f;
+		background-color: $yellow;
 		background-position: 0 -800px;
 
 		@media only screen and (max-width: $screen-sm) {
@@ -32,7 +32,7 @@
 	}
 
 	&--purple{
-		background-color: #8e44ad;
+		background-color: $purple;
 		background-position: 100px -350px;
 
 		@media only screen and (max-width: $screen-sm) {
@@ -41,7 +41,7 @@
 	}
 
 	&--red{
-		background-color: #c0392b;
+		background-color: $red;
 		background-position: 1000px 0px;
 
 		@media only screen and (max-width: $screen-sm) {
@@ -50,7 +50,7 @@
 	}
 
 	&--blue{
-		 background-color: #3498db;
+		 background-color: $blue;
 		 background-position: 120px -590px;
 
 		 @media only screen and (max-width: $screen-sm) {
@@ -59,7 +59,7 @@
 	}
 
 	&--green{
-		background-color: #1abc9c;
+		background-color: $green;
 		background-position: 300px -889px;
 
 		@media only screen and (max-width: $screen-sm) {
@@ -135,9 +135,9 @@
 		border-radius: 5px;
 		position: absolute;
 		right: 0;
-		top: -10px;
+		top: 0;
 		width: 50%;
-		height: 110%;
+		height: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;

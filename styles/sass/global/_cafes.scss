@@ -1,0 +1,68 @@
+.cafe{
+	@extend .grid;
+
+	&__pod{
+		@extend .events__pod;
+	}
+
+	&__list{
+		@extend .events__list;
+	}
+
+	&__listItem{
+		@extend .events__listItem;
+
+		&--location{
+			color: #bbb;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title{
+		@extend .events__title;
+	}
+
+	&__imgCntr{
+		@extend .events__imgCntr;
+	}
+
+	&__image{
+		@extend .events__image;
+	}
+
+	&__imgClip{
+		@extend .events__imgClip;
+	}
+
+	&__locationBanner{
+		background-color: rgba(83, 93, 95, 0.85) !important;
+		font-size: 1.8rem;
+
+		@extend .events__locationBanner;
+
+	}
+
+
+	&__desc{
+		@extend .events__desc;
+	}
+
+	&__learnmore{
+		@extend .events__learnmore;
+	}
+
+
+	&__ribbon {
+		@extend .events__ribbon;
+
+		&--red{
+			@extend .events__ribbon--red;
+		}
+
+		&--green{
+			@extend .events__ribbon--green;
+		}
+	}
+
+
+}
