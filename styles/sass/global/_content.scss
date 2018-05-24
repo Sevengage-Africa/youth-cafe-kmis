@@ -132,7 +132,7 @@
 			margin: 0;
 			text-align: center;
 
-			&:nth-of-type(1n+5){
+			&:nth-of-type(1n+6){
 				display: none;
 			}
 
@@ -199,6 +199,7 @@
 		display: inline-block;
 		margin-right: 20px;
 		vertical-align: middle;
+		line-height: 1;
 		
 		@media only screen and (max-width: $screen-sm) {
 			margin: 0;
@@ -256,6 +257,11 @@
 			margin: 60px auto 0 auto;
 		}
 
+		&--centeredNormal{
+			float: none;
+			margin: 0 auto 0 auto;
+		}
+
 		&--pullUpCentered{
 			float: none;
 			margin: -60px auto 0 auto;
@@ -296,6 +302,10 @@
 			font-size: 1.6rem;
 			line-height: 2;
 			margin-bottom: 16px;
+
+			&.c{
+				text-align: center
+			}
 		}
 
 		ul, ol{
@@ -426,12 +436,16 @@
 		text-align: center;
 		width: 80%;
 		margin: 0 auto;
+		position: relative;
 	}
 
 
 
 	&__edit{
-		margin: 0 0 200px 0;
+
+		@media only screen and (max-width: $screen-xs) {
+			overflow: scroll;
+		}
 	}
 
 

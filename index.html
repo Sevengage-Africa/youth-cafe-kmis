@@ -248,13 +248,13 @@ if('serviceWorker' in navigator) {
 	<footer class="footer">
 		<div class="inner">
 			
-			<div class="span-3-10-md span-1-1 no-pad">
-				<img src="assets/wcg-logo-footer@2x.png" class="footer__logo" alt="Western Cape">
+			<div class="span-3-10-md span-1-1 pad-bottom">
+				<img src="assets/dsd.png" class="footer__logo" alt="Western Cape">
 				<p class="footer__legal">Youth Caf&eacute;s are powered by the Department of Social Development</p>
 			</div>
 				
 		
-			<div class="span-6-10-md span-1-1">
+			<div class="span-7-10-md span-1-1 pad-left">
 				<ul class="footer__list">
 					<li class="footer__listItem"><a href="" class="footer__listLink">Home</a></li>
 					<li class="footer__listItem"><a href="" class="footer__listLink">Youth Caf&eacute;s</a></li>
@@ -262,14 +262,12 @@ if('serviceWorker' in navigator) {
 					<li class="footer__listItem"><a href="" class="footer__listLink">About Us</a></li>
 					<li class="footer__listItem"><a href="" class="footer__listLink">Events</a></li>
 					<li class="footer__listItem"><a href="" class="footer__listLink">Our Team</a></li>
+					<li class="footer__listItem"><a href="" rel="repot" class="footer__listLink">Report a problem</a></li>
 				</ul>
-				<p class="footer__legal footer__legal--center">Western Cape Government © 2018.  All rights reserved. <br> Users are advised to read the <a href="">terms of use</a> and <a href="">privacy policy</a> carefully.</p>
+				<p class="footer__legal footer__legal--center">Western Cape Government © 2018.  All rights reserved. <br> Users are advised to read the <a href="">terms of use</a>, our <a href="">privacy policy</a> and the <a href="">code of conduct</a> carefully.</p>
 			</div>
 
 
-			<div class="span-1-10-lg span-1-1 no-pad">
-				<img src="assets/south-africa-coat-of-arms@2x.png" class="footer__logo">
-			</div>
 			
 		</div>
 	</footer>
@@ -520,6 +518,92 @@ if('serviceWorker' in navigator) {
 		<img src="assets/static_qr_code_without_logo.jpg" alt="youth cafe" class="flex-img">
 	</div>
 </div>
+
+
+
+<div class="remodal reportModal" data-remodal-id="report">
+	<button data-remodal-action="close" class="remodal-close"></button>
+	
+	<div class="span-1-1">
+		<form class="form-left form-full-width">
+
+			<fieldset>
+				<legend>I Am Reporting</legend>
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="i_am_reporting"> A Profile
+						</label>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="i_am_reporting"> Something someone sent you
+						</label>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="i_am_reporting"> Something you saw in the app/website
+						</label>
+					</div>
+				</div>
+			</fieldset>
+
+
+			<fieldset>
+				<legend>What's going on?</legend>
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="what_is_going_on"> Sexual Content
+						</label>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label hidden" for="">Sexual Content</label>
+					<div class="controls">
+						<select name="sexual_content">
+							<option>Choose One</option>
+							<option>Graphic Sexual Activity</option>
+							<option>Nudity</option>
+							<option>Suggestive without nudity</option>
+							<option>Content involving minors</option>
+							<option>Abusive title or description</option>
+							<option>Other sexual content</option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="what_is_going_on"> Violent or repulsive content
+						</label>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+						<label class="control-label" for="">
+							<input type="radio" name="what_is_going_on"> Hateful or Abusive Content
+						</label>
+					</div>
+				</div>
+			</fieldset>
+
+
+		</form>
+	</div>
+</div>
+
+
 
 
 

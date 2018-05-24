@@ -3,6 +3,10 @@
 
 	&__pod{
 		@extend .events__pod;
+
+		&--normal{
+			padding: 20px !important;
+		}
 	}
 
 	&__list{

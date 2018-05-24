@@ -7,7 +7,7 @@ function AppServices(){
 
 	// Handel off-line and on-line notifications
 	function offline(){
-		window.addEventListener("load", () => {
+		window.addEventListener("load", function (){
 
 			function handleNetworkChange(event) {
 				if (navigator.onLine) {

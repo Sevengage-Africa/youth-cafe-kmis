@@ -4,8 +4,17 @@
     width: 100%;
   }
 
+  &__heading{
+    background-color: #cac7ca;
+    color: #777;
+    border-radius: 3px 3px 0 0;
+  }
+
   th, td{
     padding: $standard-padding - 0.5;
+    white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
 
   th{
@@ -28,8 +37,8 @@
     float: none;
   }
 
-  tr.zebra, tbody > tr.zebra:nth-of-type(odd){
-    background-color: #eee
+  tr.zebra, tbody.zebra tr:nth-of-type(even){
+    background-color: #f2f2f2
   }
 
 }

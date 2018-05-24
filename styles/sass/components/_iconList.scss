@@ -5,6 +5,16 @@
 	display: flex;
 	margin: 0 !important;
 
+	&--heroIcons{
+		margin: -43px auto 0 auto !important;
+   		width: 25%;
+
+   		@media only screen and (max-width: $screen-sm) {
+   			margin: -15px auto 0 auto !important;
+   			width: 50%;
+   		}
+	}
+
 	&--right{
 		float: right;
 
@@ -73,9 +83,37 @@
 	}
 
 
+	&__icon{
+		width: 25px;
+
+		&--white{
+			fill: #fff;
+		}
+	}
+
+
+	&__label{
+		display: block;
+
+		@media only screen and (max-width: $screen-sm) {
+			display: none;
+		}
+
+		&--white{
+			color: #fff;
+		}
+
+		&--small{
+			font-size: 1rem;
+		}
+	}
+
+
 
 	&__navLink{
-		@extend .content__navLink;
+		font-size: 1.6rem;
+		line-height: 1.5;
+		color: #777;
 		display: flex;
 		background-color: transparent;
 		padding: 6px 10px 4px 10px;

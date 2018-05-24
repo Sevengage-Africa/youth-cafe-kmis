@@ -19,7 +19,13 @@ a.btn {
   fieldset[disabled] & {
     pointer-events: none;
     cursor: not-allowed;
+    opacity: 0.3;
   }
+}
+
+[disabled], .disabled:hover{
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .control-group.large .btn{

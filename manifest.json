@@ -24,11 +24,12 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/home.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#333333",
   "theme_color": "#333333",
   "scope": ".",
   "description": "Youth Cafe Application",
+  "gcm_sender_id": "103953800507"
 }

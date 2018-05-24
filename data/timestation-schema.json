@@ -1,0 +1,35 @@
+{
+	"events": [
+		{
+			"eventName": "",
+			"eventDate": "",
+			"eventLocation": "",
+			"attendees": [
+				{
+					"name": "",
+					"id": "",
+					"confirmed": false, 
+					"timeIn": "", 
+					"gender": "",
+					"dob": "" 
+				}
+			]
+		}
+	],
+	"dailyAttendance": [
+		{
+			"date": "",
+			"attendees": [
+				{
+					"name": "",
+					"id": "",
+					"confirmed": false,
+					"timeIn": "",
+					"timeOut": "",
+					"gender": "",
+					"dob": ""
+				}
+			]
+		}
+	]
+}

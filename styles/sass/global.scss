@@ -6,6 +6,8 @@
 @import "lib/animate";
 @import "lib/remodal";
 @import "lib/remodal-default-theme";
+@import "lib/ngProgress";
+@import "lib/balloon";
 
 //globals
 @import "global/header";
@@ -17,7 +19,7 @@
 @import "global/modals";
 @import "global/cafes";
 @import "global/team";
-@import "components/iconList";
+@import "global/events";
 
-// events
-@import "global/events"
+// mobile app
+@import "global/app";

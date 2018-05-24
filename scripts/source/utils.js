@@ -1,8 +1,8 @@
-// @codekit-prepend "../lib/jquery-1.12.1.min.js";
-// @codekit-prepend "../lib/remodal.js";
 
 /* ---------------------------------------------
 	Global Utils
+		- all methods should not be dependent
+		on a 3rd party library
 ------------------------------------------------*/
 
 // global name-space declaration
@@ -12,8 +12,10 @@ var YCAFE = YCAFE || {};
 
 // trigger notification when the orientation changes.
 window.addEventListener("orientationchange", function() {
-	$(window).trigger("deviceOrientationChange", screen);
+	var event = new CustomEvent('deviceOrientationChange', screen);
+	window.dispatchEvent(event);
 });
+
 
 
 
@@ -39,17 +41,40 @@ YCAFE.isIpad = /iPad/i.test(navigator.userAgent);
 YCAFE.Utility = {
 
 	// get the current position of location
-	getWindowLocation(){
-		return $(window).scrollTop();
+	getWindowLocation: function(){
+		return window.scrollY;
 	},
 
 
 	// returns device width
-	getWindowWidth(){
-		return $(window).width();
+	getWindowWidth: function(){
+		return window.innerWidth;
+	},
+
+
+	// Simple JS loader ~ createElement() async by default
+	scriptLoader: function(arr){
+		var i, head = document.getElementsByTagName('head').item(0), script;
+
+		for(i = 0; i < arr.length; i++ ){
+			script = document.createElement('script');
+			script.setAttribute('src', arr[i]);
+			head.appendChild(script);
+		}
+
+		return this;
 	}
 
 };
+
+
+// AngularJS template loader safety workaround 
+// to load our EE generated globals
+YCAFE.Utility.scriptLoader([
+	'//ycafes.co.za/data/YCAFE_Globals'
+]);
+
+
 
 
 
@@ -61,7 +86,7 @@ YCAFE.Utility = {
 YCAFE.Cookie = {
 
 	// create a new cookie
-	set(args) {
+	set: function(args) {
 		var cExpires = "";
 
 		if (!args.name || /^(?:expires|max\-age|path|domain|secure)$/i.test(args.name)) {
@@ -88,13 +113,13 @@ YCAFE.Cookie = {
 
 
 	// fetch an existing cookie
-	get(name) {
+	get: function(name) {
 		return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(name).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
 	},
 
 
 	// remove a cookie
-	delete(args) {
+	delete: function(args) {
 		if (!args.name || !this.hasCookie(args.name)) {
 			return false;
 		}
@@ -103,8 +128,12 @@ YCAFE.Cookie = {
 	},
 
 	// check for a cookies existence
-	hasCookie(name) {
+	hasCookie: function(name) {
 		return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(name).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
 	}
 
 };
+
+
+
+

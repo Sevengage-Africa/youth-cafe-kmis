@@ -21,6 +21,12 @@ body{
   overflow-x: hidden;
 }
 
+main{
+  background-color: #fff;
+  float: left;
+  width: 100%;
+  padding-bottom: 40px;
+}
 
 
 a{
@@ -47,6 +53,23 @@ img {
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
+}
+
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+  img:-moz-loading {
+    visibility: hidden;
+  }
+}
+
+img:not([src]) {
+    visibility: hidden;
+}
+
+img[data-src],
+img[data-srcset] {
+  display: block;
+  min-height: 1px;
 }
 
 button, input, select, textarea {

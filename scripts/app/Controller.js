@@ -2,19 +2,25 @@
 	Parent Application Controller
 ----------------------------------------------------------*/
 
-function AppController ($scope, $location, $routeParams, AppServices){
+function AppController ($scope, $rootScope, $location, $timeout, $routeParams, AppServices){
 
 	this.Globals = YCAFE.Globals;
-	this.nextPage = null;
+	$scope.isLoading = true;
+
+	// saved from checkAuthStatus - use to redirect upon successful login
+	$rootScope.nextPage = null;
 
 
 	// instantiate off-line service
 	AppServices.offline();
+
+
+	
 }
 
 
 
-AppController.$inject = ["$scope", "$location", "$routeParams", "AppServices"];
+AppController.$inject = ["$scope", "$rootScope", "$location", "$timeout", "$routeParams", "AppServices"];
 
 
 angular
@@ -30,24 +36,53 @@ angular
 	Route Controller
 ----------------------------------------------------------*/
 
-function RouteController ($scope, $routeParams, config){
+function DynamicRouteController ($scope, $routeParams, $timeout, config){
 
-	$scope.templateURL = () => {
-		return config.baseUrl +"/"+ $routeParams.template +"/"+ $routeParams.name + ($routeParams.hasOwnProperty("url_title") ? "/" + $routeParams.url_title : "");
+	$scope.templateURL = function (){
+		return config.baseUrl +"/"+ $routeParams.template +"/"+ $routeParams.template_group + ($routeParams.hasOwnProperty("section") ? "/" + $routeParams.section : "") + ($routeParams.hasOwnProperty("url_title") ? "/" + $routeParams.url_title : "");
 	};
 
 }
 
 
 
-RouteController.$inject = ["$scope", "$routeParams", "config"];
+DynamicRouteController.$inject = ["$scope", "$routeParams", "$timeout", "config"];
 
 
 angular
 	.module("YouthCafe")
-	.controller("RouteController", RouteController);
+	.controller("DynamicRouteController", DynamicRouteController);
 
 
+
+
+
+
+
+/* ----------------------------------------------------------
+	Static Route Controller
+----------------------------------------------------------*/
+
+function StaticRouteController ($scope, $rootScope, $timeout, ngProgressFactory){
+	$scope.progressbar = ngProgressFactory.createInstance();
+
+
+	function startProgressBar(){
+		$scope.progressbar.start();
+		$timeout($scope.progressbar.complete(), 1000);
+	}
+
+	$rootScope.$on("$routeChangeStart", startProgressBar);
+}
+
+
+
+StaticRouteController.$inject = ["$scope", "$rootScope", "$timeout", "ngProgressFactory"];
+
+
+angular
+	.module("YouthCafe")
+	.controller("StaticRouteController", StaticRouteController);
 
 
 

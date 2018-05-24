@@ -1,13 +1,27 @@
 .footer{
 	float: left;
-	padding: $standard-padding;
-	margin-top: 20px;
+	padding: 40px 20px 20px 20px;
 	width: 100%;
 	background-color: #333;
 	@extend .grid;
 
 	@media only screen and (max-width: $screen-md) {
 		padding-bottom: 60px;
+	}
+
+
+	&__col--1{
+		@extend %float-left;
+		@extend .span-3-10-md;
+		@extend .span-1-1;
+		padding: 0;
+	}
+
+	&__col--2{
+		@extend %float-left;
+		@extend .span-7-10-md;
+		@extend .span-1-1;
+		padding: 0 20px 20px 20px;
 	}
 
 	&__logo{

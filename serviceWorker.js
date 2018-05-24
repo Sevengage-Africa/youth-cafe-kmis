@@ -4,17 +4,21 @@
 
 
 (function(){
-	var version = '1.1.0';
+	var version = '1.1.4';
 
 	var filesToCache = [
 		'/home.html',
-		'/mobile/locations',
-		'/mobile/hubs',
-		'/mobile/page/about',
+		'/assets/app-back.png',
+		'/assets/preloader3.svg',
 		'/styles/global.min.css',
 		'/scripts/app.min.js',
+		'/scripts/utils.min.js',
 		'/assets/point-background.png',
-		'/assets/yc-logo-horz.png'
+		'/assets/yc-logo-horz.png',
+		'/assets/multicultural_2.jpg',
+		'/assets/dsd.png',
+		'/assets/icons/favicon-32x32.png',
+		'/favicon.ico'
 	];
 
 

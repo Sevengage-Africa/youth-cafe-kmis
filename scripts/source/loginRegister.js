@@ -6,9 +6,9 @@
 (function ($){
 
 
-	const authModal = {
+	var authModal = {
 
-		focus(e){
+		focus: function(e){
 
 			// login modal
 			if( $(e.target).hasClass("loginModal") ){
@@ -38,7 +38,7 @@
 
 
 		// show/hide control for the password field
-		passwordToggleControler(e){
+		passwordToggleControler: function(e){
 			var $passwordToggle = $(e.currentTarget),
 				$input = $passwordToggle.prev("input"),
 				isText = $input.prop("type") === "text";
@@ -58,8 +58,8 @@
 
 
 		// method for adding the show/hide button for ALL password fields
-		appendPasswordToggle(){
-			let toggleHTML = [	
+		appendPasswordToggle: function(){
+			var toggleHTML = [	
 				'<a href="" class="control-password-toggle" togglePassword>',
 					'<svg class="control-icon control-icon-show" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">',
 						'<title>show password</title>',
@@ -92,31 +92,106 @@
 
 
 		// clones the password field for the confirm password field on the registration page
-		cloneValue(){
+		cloneValue: function(){
 			$("#regPasswordConfirm").val($(this).val());
 			return this;
 		},
 
 
 		// generic open model method
-		openModel(e){
-			let modal = (e.type === "triggerLoginModel") ? $('[data-remodal-id='+ e.rel +']') : $('[data-remodal-id='+ e.currentTarget.rel +']');
+		openModel: function(e){
+			var modal = (e.type === "triggerLoginModel") ? $('[data-remodal-id='+ e.rel +']') : $('[data-remodal-id='+ e.currentTarget.rel +']');
 			
 			modal.remodal({hashTracking: false}).open();
-			authModal.loginNotify(e);
+			authModal.loginRequiredNotification(e);
 			e.preventDefault();
+
+			if( e.hasOwnProperty("next_page") ){
+				authModal.nextPage = e.next_page;
+			}
 
 			return this;
 		},
 
 
-		loginNotify(e){
+		// toggles the message in the login model indicating progression blockage
+		loginRequiredNotification: function(e){
 			$("#loginAlert").toggleClass("hide", e.type !== "triggerLoginModel");
 			return this;
 		},
 
-		hideLoginNotify(){
+		hideLoginRequiredNotification: function(){
 			$("#loginAlert").addClass("hide");
+			return this;
+		},
+
+
+
+
+		// route the user to the next page or just refresh
+		routeUser: function(){
+			if ( authModal.nextPage ){
+				window.location.href =  window.location.hostname + "/home.html#!" + authModal.nextPage;
+			}else{
+				window.location.reload();
+			}
+
+			return this;
+		},
+
+
+
+		// ajax login handler
+		loginXhrHandler: function(e, data){
+
+			switch(data.status){
+				case 100:
+					$(".loginModal").addClass("hide");
+					$(".app__loader").toggleClass("hide app__loader--overlay");
+					break;
+
+				case 200:
+					authModal.routeUser();
+					break;
+
+				case 403: 
+					$(".loginModal").removeClass("hide");
+					$(".app__loader").toggleClass("hide app__loader--overlay");
+					break; 
+			}
+
+
+			$(window).trigger("loginTrigger", {});
+
+			return this;
+		},
+
+
+
+		
+
+
+
+		// ajax logout handler
+		logoutXhrHandler: function(e, data){
+
+			switch(data.status){
+				case 100:
+					$(".app__overlay").addClass("show");
+					$(".app__loader").toggleClass("hide app__loader--overlay");
+					break;
+
+				case 205:
+					window.location.reload();
+					break;
+
+				case 403: 
+					alert("Unable to log out for some reason. Please try again.");
+					break;
+			}
+
+			$(window).trigger("loginTrigger", {});
+
 			return this;
 		}
 
@@ -128,12 +203,14 @@
 
 	$(document)
 		.on("opened", ".remodal", authModal.focus)
-		.on("closed", ".remodal", authModal.hideLoginNotify)
-		.on("click", "[rel='login'], [rel='register'], [rel='forgot'], [rel='checkIn']", authModal.openModel)
 		.on("triggerLoginModel", authModal.openModel)
+		.on("closed", ".remodal", authModal.hideLoginRequiredNotification)
+		.on("XHRLoginStart XHRLoginSuccess XHRLoginFail", authModal.loginXhrHandler)
+		.on("XHRLogoutStart XHRLogoutSuccess XHRLogoutFail", authModal.logoutXhrHandler)
+
+		.on("click touchend", "[rel='login'], [rel='register'], [rel='forgot'], [rel='checkIn'], [rel='report']", authModal.openModel)
 		.on("keyup", "#regPassword", authModal.cloneValue)
 		.on("click touchend", "[togglePassword]",  authModal.passwordToggleControler);
 
 
 }(window.jQuery));
-

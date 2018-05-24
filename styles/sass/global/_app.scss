@@ -1,0 +1,40 @@
+.app{
+	&__body{
+		background-color: #414042;
+		background-image: url(../assets/app-back.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top center;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__view{
+		z-index: 999;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__loader{
+		height: 100px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: (-100px / 2);
+		margin-left: (-100px / 2);
+		z-index: 100;
+
+		&--overlay{
+			z-index: 99999;
+			display: block !important;
+		}
+	}
+
+	&__overlay{
+		@extend .remodal-overlay;
+		@extend .remodal-is-opening;
+	}
+}

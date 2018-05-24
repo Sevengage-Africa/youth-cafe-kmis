@@ -83,6 +83,17 @@
 	}
 
 
+	&--purple{
+		background-color: $purple;
+		background-position: 100px -350px;
+
+		@media only screen and (max-width: $screen-sm) {
+			background-position: -100px -350px;
+		}
+	}
+
+
+
 
 	&__overlay{
 		background-color: rgba(0, 0, 0, 0.5);
@@ -120,7 +131,7 @@
 
 		&--centerSecondary{
 			font-weight: 300;
-			font-size: 8rem;
+			font-size: 6rem;
 			text-align: center;
 			margin: 50px 0 30px 0;
 			line-height: 1;
@@ -139,6 +150,7 @@
 
 		&--2{
 			font-size: 3rem;
+			line-height: 1.4;
 		}
 
 

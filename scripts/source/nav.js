@@ -4,10 +4,10 @@
 
 (function ($){
 
-	const navModule = {
+	var navModule = {
 
 		// setup and cache reused objects
-		init(){
+		init: function(){
 			navModule.nav = $("#mobileNav");
 			// navModule.setOffScreen();
 			return this;
@@ -15,7 +15,7 @@
 
 
 		// opens mobile nav
-		openNav(e){
+		openNav: function(e){
 			$("#mobileNav").toggleClass("mobileNav--show");
 			$(document.body).toggleClass("body--fixed");
 
@@ -26,7 +26,7 @@
 
 
 		// close mobile nav
-		closeNav(){
+		closeNav: function(){
 			$("#mobileNav").removeClass("mobileNav--show");
 			$(document.body).removeClass("body--fixed");
 
@@ -34,16 +34,16 @@
 		},
 
 
-		mobileNavClick(){
-			setTimeout(() => {
+		mobileNavClick: function(){
+			setTimeout(function (){
 				navModule.closeNav();
 			}, 1000);
 		},
 
 
 		// sets the mobile nav off screen for a quicker animation
-		setOffScreen(event, screen){
-			let screenWidth = screen ? screen.availWidth : YCAFE.Utility.getWindowWidth();
+		setOffScreen: function(event, screen){
+			var screenWidth = screen ? screen.availWidth : YCAFE.Utility.getWindowWidth();
 
 			navModule.nav
 				.addClass("hide")
@@ -51,14 +51,15 @@
 
 			// wait for the animation in the CSS has complete to show
 			// nav on DOM
-			setTimeout(() => {
+			setTimeout(function (){
 				navModule.nav.removeClass("hide");
 			}, 1500);
 
 			return this;
 		},
 
-		goBack(e){
+
+		goBack: function(e){
 			e.preventDefault();
 			window.history.back();
 
