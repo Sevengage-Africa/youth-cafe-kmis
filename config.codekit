@@ -1015,6 +1015,39 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
+	"\/scripts\/dashboard\/dashboardSetup.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/dashboard\/dashboardSetup.js",
+		"outputAbbreviatedPath": "\/scripts\/dashboard\/dashboardSetup.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/dashboard\/scannerModule.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/dashboard\/scannerModule.js",
+		"outputAbbreviatedPath": "\/scripts\/dashboard\/scannerModule.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/dashboard\/timeStation.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/dashboard\/timeStation.js",
+		"outputAbbreviatedPath": "\/scripts\/dashboard\/timeStation.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/scripts\/global.min.js": {
 		"fileType": 64,
 		"ignore": 1,

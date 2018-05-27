@@ -334,7 +334,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.iconList, .main__heroQuickList, .main__auxNav, .main__tabs, .navbar__nav {
+.iconList, .main__heroQuickList, .main__auxNav, .main__tabs, .main__imageList, .navbar__nav {
   list-style-type: none;
   padding: 0;
   margin: 0; }
@@ -1173,6 +1173,21 @@ hr {
 ==========================*/
 .table--fullWidth {
   width: 100%; }
+.table--calendar tr {
+  display: flex; }
+.table--calendar td, .table--calendar th {
+  flex: 1 1 0;
+  text-align: center !important;
+  white-space: normal !important; }
+.table--calendar td {
+  border-right: 1px solid #ccc;
+  min-height: 150px; }
+.table--calendar td.calendarBlank {
+  color: #ccc; }
+.table .calendarMonthLinks {
+  display: block; }
+.table__weekDays td {
+  min-height: auto; }
 .table__heading {
   background-color: #cac7ca;
   color: #777;
@@ -2029,6 +2044,11 @@ img.flex-img {
     margin-bottom: 24px; }
   .checkinModal__heading--3 {
     margin-bottom: 5px; }
+  .checkinModal__confirmIcon {
+    width: 200px;
+    fill: #27ae60; }
+  .checkinModal__text {
+    font-size: 1.8rem; }
 
 .reported__legal {
   font-size: 1rem;
@@ -2287,7 +2307,7 @@ html.remodal-is-locked {
   vertical-align: middle; }
 
 /* Close button */
-.remodal-close {
+.remodal-close, .scanner__close, .remodal-minimize, .scanner__minimize {
   position: absolute;
   z-index: 9999;
   top: 0;
@@ -2306,11 +2326,11 @@ html.remodal-is-locked {
   outline: 0;
   background: transparent; }
 
-.remodal-close:hover,
-.remodal-close:focus {
-  color: #2b2e38; }
+.remodal-minimize, .scanner__minimize {
+  top: -2px;
+  left: 35px; }
 
-.remodal-close:before {
+.remodal-close:before, .scanner__close:before, .remodal-minimize:before, .scanner__minimize:before {
   font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
   font-size: 25px;
   line-height: 35px;
@@ -2321,6 +2341,9 @@ html.remodal-is-locked {
   width: 35px;
   content: "\00d7";
   text-align: center; }
+
+.remodal-minimize:before, .scanner__minimize:before {
+  content: "\2013"; }
 
 /* Dialog buttons */
 .remodal-confirm,
@@ -2358,7 +2381,8 @@ html.remodal-is-locked {
 /* Remove inner padding and border in Firefox 4+ for the button tag. */
 .remodal-confirm::-moz-focus-inner,
 .remodal-cancel::-moz-focus-inner,
-.remodal-close::-moz-focus-inner {
+.remodal-close::-moz-focus-inner,
+.scanner__close::-moz-focus-inner {
   padding: 0;
   border: 0; }
 
@@ -2429,6 +2453,11 @@ html.remodal-is-locked {
       margin: 20px 0 20px 0;
       font-weight: 300;
       font-size: 2.4rem; }
+  .main__subHeading {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1;
+    margin-bottom: 20px; }
   .main__hero {
     margin-top: 80px; }
   .main__heroSubHeading {
@@ -2489,10 +2518,18 @@ html.remodal-is-locked {
     display: flex;
     flex: 1 0 0;
     flex-direction: column;
-    flex-basis: auto; }
+    flex-basis: auto;
+    position: relative; }
   .main__contentForm {
     width: 80%;
-    margin: 40px auto; }
+    margin: 20px auto 40px auto; }
+  .main__contentPreloader {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px; }
   .main__tabs {
     margin-top: 10px; }
   .main__tabItem {
@@ -2507,6 +2544,14 @@ html.remodal-is-locked {
     .main__tabLink--active {
       border-bottom: 4px solid #c0392b;
       color: white; }
+  .main__imageItem {
+    display: inline-block;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center; }
+  .main__image {
+    width: 100px;
+    clip-path: circle(44% at 50% 50%); }
 
 .navbar {
   background-color: #414042;
@@ -2552,9 +2597,11 @@ html.remodal-is-locked {
   .navbar__navLink {
     display: flex;
     padding: 10px 20px;
-    color: #ccc; }
+    color: #ccc;
+    line-height: 1.5; }
   .navbar__navIconCntr {
-    display: inline-block; }
+    display: inline-block;
+    height: 20px; }
   .navbar__navIcon {
     width: 20px;
     fill: #ccc; }
@@ -2571,7 +2618,22 @@ html.remodal-is-locked {
   width: 360px;
   height: 230px;
   padding: 28px;
-  box-shadow: -6px 5px 40px rgba(0, 0, 0, 0.46); }
+  box-shadow: -6px 5px 40px rgba(0, 0, 0, 0.46);
+  -webkit-transition: bottom 500ms cubic-bezier(0.74, -0.16, 0.28, 1.11);
+  -moz-transition: bottom 500ms cubic-bezier(0.74, -0.16, 0.28, 1.11);
+  -o-transition: bottom 500ms cubic-bezier(0.74, -0.16, 0.28, 1.11);
+  transition: bottom 500ms cubic-bezier(0.74, -0.16, 0.28, 1.11); }
+.scanner--pipMin {
+  bottom: -196px; }
+.scanner__heading {
+  position: absolute;
+  color: #95979c;
+  font-size: 1.4rem;
+  top: 10px;
+  left: 50%;
+  margin-left: -50px;
+  font-weight: 500;
+  line-height: 1; }
 .scanner__videoPip {
   width: 100%; }
 .scanner__video {

@@ -4,6 +4,43 @@
     width: 100%;
   }
 
+  &--calendar{
+     tr{
+        display: flex;
+     }
+
+     td, th{
+        flex: 1 1 0;
+        text-align: center !important;
+        white-space: normal !important;
+     }
+
+     td{
+        border-right: 1px solid #ccc;
+        min-height: 150px;
+     }
+
+     td.calendarBlank{
+        color: #ccc;
+     }
+  }
+
+  .calendarMonthLinks{
+    display: block;
+  }
+
+  &__weekDays{
+
+    td{
+      min-height: auto;
+    }
+
+  }
+
+  &__days{
+
+  }
+
   &__heading{
     background-color: #cac7ca;
     color: #777;

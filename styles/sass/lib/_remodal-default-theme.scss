@@ -75,7 +75,7 @@
 
 /* Close button */
 
-.remodal-close {
+.remodal-close, .remodal-minimize {
   position: absolute;
   z-index: 9999;
   top: 0;
@@ -99,12 +99,17 @@
   background: transparent;
 }
 
-.remodal-close:hover,
-.remodal-close:focus {
-  color: #2b2e38;
+.remodal-minimize{
+  top: -2px;
+  left: 35px;
 }
 
-.remodal-close:before {
+// .remodal-close:hover,
+// .remodal-close:focus {
+//   color: #2b2e38;
+// }
+
+.remodal-close:before, .remodal-minimize:before {
   font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
   font-size: 25px;
   line-height: 35px;
@@ -114,11 +119,14 @@
   left: 0;
 
   display: block;
-
   width: 35px;
 
   content: "\00d7";
   text-align: center;
+}
+
+.remodal-minimize:before{
+  content: "\2013";
 }
 
 /* Dialog buttons */

@@ -8,7 +8,34 @@
 		width: 360px;
 		height: 230px;
 		padding: 28px;
-		box-shadow: -6px 5px 40px rgba(0, 0, 0, 0.46)
+		box-shadow: -6px 5px 40px rgba(0, 0, 0, 0.46);
+		-webkit-transition: bottom 500ms cubic-bezier(.74,-0.16,.28,1.11);
+		-moz-transition: bottom 500ms cubic-bezier(.74,-0.16,.28,1.11);
+		-o-transition: bottom 500ms cubic-bezier(.74,-0.16,.28,1.11);
+		transition: bottom 500ms cubic-bezier(.74,-0.16,.28,1.11);
+	}
+
+	&--pipMin{
+		bottom: -196px;
+	}
+
+	&__close{
+		@extend .remodal-close;
+	}
+
+	&__minimize{
+		@extend .remodal-minimize;
+	}
+
+	&__heading{
+		position: absolute;
+		color: #95979c;
+		font-size: 1.4rem;
+		top: 10px;
+		left: 50%;
+		margin-left: -50px;
+		font-weight: 500;
+		line-height: 1;
 	}
 
 	&__videoPip{

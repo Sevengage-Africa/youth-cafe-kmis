@@ -47,6 +47,13 @@
 		}
 	}
 
+	&__subHeading{
+		font-size: 1.6rem;
+		color: rgba(255, 255, 255, 0.5);
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
 
 	// home page hero
 
@@ -153,11 +160,21 @@
 		flex: 1 0 0;
 		flex-direction: column;
 		flex-basis: auto;
+		position: relative;
 	}
 
 	&__contentForm{
 		width: 80%;
-		margin: 40px auto;
+		margin: 20px auto 40px auto;
+	}
+
+	&__contentPreloader{
+		width: 100px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -50px;
+		margin-left: -50px;
 	}
 
 
@@ -185,6 +202,21 @@
 	}
 
 
+	&__imageList{
+		@extend %unstyled-list;
+	}
+
+	&__imageItem{
+		display: inline-block;
+		padding: 20px;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	&__image{
+		width: 100px;
+		clip-path: circle(44% at 50% 50%);
+	}
 
 
 }
